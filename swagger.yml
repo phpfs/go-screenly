@@ -1989,7 +1989,7 @@ definitions:
             {"id": "screen2_id"},
           ]
         type: object
-        default: []
+        default: {}
   Group:
     required:
       - id
@@ -2074,7 +2074,7 @@ definitions:
           ]
           Duration is optional and set to 10 seconds by default.
         type: object
-        default: []
+        default: {}
       duration:
         title: Duration
         description: >-
@@ -2094,7 +2094,7 @@ definitions:
            {"id": "group2_id"}
           ]
         type: object
-        default: []
+        default: {}
       predicate:
         title: Predicate
         description: Predicate in the screenly pro format. Defaults to 'TRUE'
