@@ -30,7 +30,7 @@ type PlaylistWrite struct {
 	// ]
 	// Duration is optional and set to 10 seconds by default.
 	//
-	Assets interface{} `json:"assets,omitempty"`
+	Assets []interface{} `json:"assets"`
 
 	// Duration
 	//
@@ -49,7 +49,7 @@ type PlaylistWrite struct {
 	//  {"id": "group2_id"}
 	// ]
 	//
-	Groups interface{} `json:"groups,omitempty"`
+	Groups []interface{} `json:"groups"`
 
 	// Id
 	//

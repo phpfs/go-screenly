@@ -39,7 +39,7 @@ type GroupWrite struct {
 	//   {"id": "screen2_id"},
 	// ]
 	//
-	Screens interface{} `json:"screens,omitempty"`
+	Screens []interface{} `json:"screens"`
 
 	// Url
 	// Read Only: true

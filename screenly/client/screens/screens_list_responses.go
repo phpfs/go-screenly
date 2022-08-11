@@ -50,22 +50,20 @@ func NewScreensListOK() *ScreensListOK {
 ScreensListOK screens list o k
 */
 type ScreensListOK struct {
-	Payload *models.ScreenEndpoint
+	Payload []*models.ScreenEndpoint
 }
 
 func (o *ScreensListOK) Error() string {
 	return fmt.Sprintf("[GET /screens/][%d] screensListOK  %+v", 200, o.Payload)
 }
-func (o *ScreensListOK) GetPayload() *models.ScreenEndpoint {
+func (o *ScreensListOK) GetPayload() []*models.ScreenEndpoint {
 	return o.Payload
 }
 
 func (o *ScreensListOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ScreenEndpoint)
-
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

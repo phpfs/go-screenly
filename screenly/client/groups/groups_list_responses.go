@@ -50,22 +50,20 @@ func NewGroupsListOK() *GroupsListOK {
 GroupsListOK groups list o k
 */
 type GroupsListOK struct {
-	Payload *models.GroupRead
+	Payload []*models.GroupRead
 }
 
 func (o *GroupsListOK) Error() string {
 	return fmt.Sprintf("[GET /groups/][%d] groupsListOK  %+v", 200, o.Payload)
 }
-func (o *GroupsListOK) GetPayload() *models.GroupRead {
+func (o *GroupsListOK) GetPayload() []*models.GroupRead {
 	return o.Payload
 }
 
 func (o *GroupsListOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.GroupRead)
-
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -50,22 +50,20 @@ func NewAssetsListOK() *AssetsListOK {
 AssetsListOK assets list o k
 */
 type AssetsListOK struct {
-	Payload *models.Asset
+	Payload []*models.Asset
 }
 
 func (o *AssetsListOK) Error() string {
 	return fmt.Sprintf("[GET /assets/][%d] assetsListOK  %+v", 200, o.Payload)
 }
-func (o *AssetsListOK) GetPayload() *models.Asset {
+func (o *AssetsListOK) GetPayload() []*models.Asset {
 	return o.Payload
 }
 
 func (o *AssetsListOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.Asset)
-
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

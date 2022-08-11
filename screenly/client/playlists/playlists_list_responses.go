@@ -50,22 +50,20 @@ func NewPlaylistsListOK() *PlaylistsListOK {
 PlaylistsListOK playlists list o k
 */
 type PlaylistsListOK struct {
-	Payload *models.PlaylistListRead
+	Payload []*models.PlaylistListRead
 }
 
 func (o *PlaylistsListOK) Error() string {
 	return fmt.Sprintf("[GET /playlists/][%d] playlistsListOK  %+v", 200, o.Payload)
 }
-func (o *PlaylistsListOK) GetPayload() *models.PlaylistListRead {
+func (o *PlaylistsListOK) GetPayload() []*models.PlaylistListRead {
 	return o.Payload
 }
 
 func (o *PlaylistsListOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.PlaylistListRead)
-
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 
