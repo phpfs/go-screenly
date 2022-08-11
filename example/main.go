@@ -29,7 +29,7 @@ func main() {
 		// Results are given as slice...
 		for _, screen := range res.Payload {
 			// ...and properly typed within
-			fmt.Printf("%s - Status: %s\n", screen.Name, screen.Status)
+			fmt.Printf("%s - Status: %s\n", *screen.Name, *screen.Status)
 		}
 	}
 }
