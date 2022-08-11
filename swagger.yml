@@ -38,7 +38,9 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/Asset'
+            type: array
+            items:
+              $ref: '#/definitions/Asset'
           examples:
             application/json:
               - id: 01FJXRHS3MNQXNXPNMMPPGTEST
@@ -430,7 +432,9 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/GroupRead'
+            type: array
+            items:
+              $ref: '#/definitions/GroupRead'
           examples:
             application/json:
               - url: /api/v3/groups/all-screens/
@@ -858,7 +862,9 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/PlaylistListRead'
+            type: array
+            items:
+              $ref: '#/definitions/PlaylistListRead'
           examples:
             application/json:
               - is_enabled: true
@@ -1183,7 +1189,9 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/ScreenEndpoint'
+            type: array
+            items:
+              $ref: '#/definitions/ScreenEndpoint'
           examples:
             application/json:
               - id: 01DQ0KJT300007KJAK074WGTBD
@@ -1988,8 +1996,11 @@ definitions:
             {"id": "screen1_id"},
             {"id": "screen2_id"},
           ]
-        type: object
-        default: {}
+        type: array
+        default: []
+        items:
+          type: object
+          default: {}
   Group:
     required:
       - id
@@ -2073,8 +2084,11 @@ definitions:
            {"id": "asset2_id"}
           ]
           Duration is optional and set to 10 seconds by default.
-        type: object
-        default: {}
+        type: array
+        default: []
+        items:
+          type: object
+          default: {}
       duration:
         title: Duration
         description: >-
@@ -2093,8 +2107,11 @@ definitions:
            {"id": "group_id"},
            {"id": "group2_id"}
           ]
-        type: object
-        default: {}
+        type: array
+        default: []
+        items:
+          type: object
+          default: {}
       predicate:
         title: Predicate
         description: Predicate in the screenly pro format. Defaults to 'TRUE'
