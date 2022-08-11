@@ -14,7 +14,7 @@ go get -u github.com/phpfs/go-screenly/screenly
 
 ### Usage
 
-See the `examples` folder for usage details.
+See the [`example` folder](./example/) for usage details.
 
 ### Code generation
 
@@ -22,6 +22,6 @@ In case the `swagger.yml` in this repository should become obsolete, simply clon
 
 ## License etc.
 
-This repository is based upon [`go-netbox`](https://github.com/netbox-community/go-netbox) and therefore available under [Apache 2.0 license](LICENSE.md) as well.
+This repository is based upon [`go-netbox`](https://github.com/netbox-community/go-netbox) and therefore available under [Apache 2.0 license](./LICENSE.md) as well.
 
 The `swagger.yml` does not belong to this repository but is only a copy of the [official api definition](https://developer.screenlyapp.com/?format=openapi) by [Screenly Inc.](https://www.screenly.io/about-us/).
